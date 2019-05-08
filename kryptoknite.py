@@ -11,7 +11,7 @@ import random
 
 engine = pyttsx3.init('sapi5')
 
-client = wolframalpha.Client('WXUQYQ-7A5665H6P4')
+client = wolframalpha.Client('Get your own key')
 
 voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[len(voices) - 2].id)
