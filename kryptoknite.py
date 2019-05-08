@@ -48,44 +48,44 @@ def GivenCommand():
         k.pause_threshold = 1
         audio = k.listen(source)
     try:
-        query = k.recognize_google(audio, language='en-in')
-        print('User: ' + query + '\n')
+        Input = k.recognize_google(audio, language='en-in')
+        print('Kunal Dhariwal: ' + Input + '\n')
 
     except sr.UnknownValueError:
         talk('Sorry! I didn\'t get that! Try typing it here!')
-        query = str(input('Command: '))
+        Input = str(input('Command: '))
 
-    return query
+    return Input
 
 
 if __name__ == '__main__':
 
     while True:
 
-        query = GivenCommand()
-        query = query.lower()
+        Input = GivenCommand()
+        Input = Input.lower()
 
-        if 'open google' in query:
+        if 'open google' in Input:
             talk('sure')
             webbrowser.open('www.google.co.in')
 
-        elif 'open gmail' in query:
+        elif 'open gmail' in Input:
             talk('sure')
             webbrowser.open('www.gmail.com')
             
-        elif 'open youtube' in query:
+        elif 'open youtube' in Input:
             talk('sure')
             webbrowser.open('www.youtube.com')
 
-        elif "what\'s up" in query or 'how are you' in query:
+        elif "what\'s up" in Input or 'how are you' in Input:
             setReplies = ['Just doing some stuff!', 'I am good!', 'Nice!', 'I am amazing and full of power']
             talk(random.choice(setReplies))
        
-        elif "who are you" in query or 'where are you' in query or 'what are you' in query:
+        elif "who are you" in Input or 'where are you' in Input or 'what are you' in Input:
             setReplies = [' I am KryptoKnite', 'In your system', 'I am an example of AI']
             talk(random.choice(setReplies))
 
-        elif 'email' in query:
+        elif 'email' in Input:
             talk('Who is the recipient? ')
             recipient = GivenCommand()
 
@@ -105,19 +105,19 @@ if __name__ == '__main__':
                 except:
                     talk('Sorry ! I am unable to send your message at this moment!')
 
-        elif 'nothing' in query or 'abort' in query or 'stop' in query:
+        elif 'nothing' in Input or 'abort' in Input or 'stop' in Input:
             talk('okay')
             talk('Bye, have a good day.')
             sys.exit()
 
-        elif 'hello' in query:
+        elif 'hello' in Input:
             talk('hey')
 
-        elif 'bye' in query:
+        elif 'bye' in Input:
             talk('Bye, have a great day.')
             sys.exit()
 
-        elif 'play music' in query:
+        elif 'play music' in Input:
             music_folder = 'C:\\Users\\Public\\Music\\'
             music = ['friends']
             random_music = music_folder + random.choice(music) + '.mp3'
@@ -125,7 +125,7 @@ if __name__ == '__main__':
 
             talk('Okay, here is your music! Enjoy!')
 
-        elif 'show images' in query:
+        elif 'show images' in Input:
             images_folder = 'C:\\Users\\Public\\Pictures\\'
             images = ['kunal']
             random_images = images_folder + random.choice(images) + '.jpeg'
@@ -135,18 +135,18 @@ if __name__ == '__main__':
 
 
         else:
-            query = query
+            Input = Input
             talk('Searching...')
             try:
                 try:
-                    res = client.query(query)
+                    res = client.Input(Input)
                     results = next(res.results).text
                     talk('Alpha says')
                     talk('Gotcha')
                     talk(results)
 
                 except:
-                    results = wikipedia.summary(query, sentences=3)
+                    results = wikipedia.summary(Input, sentences=3)
                     talk('Got it.')
                     talk('Wikipedia says')
                     talk(results)
