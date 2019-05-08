@@ -141,16 +141,16 @@ if __name__ == '__main__':
             try:
                 try:
                     res = client.Input(Input)
-                    results = next(res.results).text
+                    outputs = next(res.outputs).text
                     talk('Alpha says')
                     talk('Gotcha')
-                    talk(results)
+                    talk(outputs)
 
                 except:
-                    results = wikipedia.summary(Input, sentences=3)
+                    outputs = wikipedia.summary(Input, sentences=3)
                     talk('Gotcha')
                     talk('Wikipedia says')
-                    talk(results)
+                    talk(outputs)
 
 
             except:
