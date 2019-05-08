@@ -151,8 +151,11 @@ if __name__ == '__main__':
                     talk('Wikipedia says')
                     talk(results)
 
+
             except:
-                webbrowser.open('www.google.com')
+                    talk("searching on google for " + Input)
+                    say = Input.replace(' ', '+')
+                    webbrowser.open('https://www.google.co.in/search?q=' + Input)
 
         talk('Next Command! Please!')
 
