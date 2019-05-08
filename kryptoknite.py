@@ -117,6 +117,7 @@ if __name__ == '__main__':
             talk('Bye, have a great day.')
             sys.exit()
 
+
         elif 'play music' in Input:
             music_folder = 'C:\\Users\\Public\\Music\\'
             music = ['friends']
@@ -147,7 +148,7 @@ if __name__ == '__main__':
 
                 except:
                     results = wikipedia.summary(Input, sentences=3)
-                    talk('Got it.')
+                    talk('Gotcha')
                     talk('Wikipedia says')
                     talk(results)
 
@@ -156,6 +157,8 @@ if __name__ == '__main__':
                     talk("searching on google for " + Input)
                     say = Input.replace(' ', '+')
                     webbrowser.open('https://www.google.co.in/search?q=' + Input)
+
+
 
         talk('Next Command! Please!')
 
