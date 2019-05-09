@@ -28,10 +28,10 @@ def greetMe():
     if CurrentHour >= 0 and CurrentHour < 12:
         talk('Good Morning!')
 
-    if CurrentHour >= 12 and CurrentHour < 18:
+    elif CurrentHour >= 12 and CurrentHour < 18:
         talk('Good Afternoon!')
 
-    if CurrentHour >= 18 and CurrentHour != 0:
+    elif CurrentHour >= 18 and CurrentHour != 0:
         talk('Good Evening!')
 
 
